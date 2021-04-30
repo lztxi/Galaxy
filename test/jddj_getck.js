@@ -1,6 +1,6 @@
 /*
 京东到家获取ckj脚本
-重写地址:daojia.jd.com/client?functionId=login,触发类型:request-headers
+重写地址:daojia.jd.com/html/index.html,触发类型:request-headers
 MITM添加:daojia.jd.com
 每次获取会覆盖之前的ck,请先用boxjs备份
 多账号可以每次获取后复制出来最后拼在一起用英文逗号(,)分隔后一起复制到boxjs里
@@ -19,6 +19,7 @@ const $ = new API("jddj_getck");
                 }
             }
         });
+        $.write(ck, '#jddj_cookies');
         $.notify('京东到家脚本获取ck成功', '', ck);
         console.log(ck);
     }
