@@ -9,9 +9,7 @@
       "id": "jddj_fruit",
       "name": "京东到家果园任务",
       "keys": [
-        "jddj_cookies",
-        "jddj_isNotify",
-        "jddj_barkKey"
+        "jddj_cookies"
       ],
       "descs_html": [
         "多个用逗号分开"
@@ -25,15 +23,6 @@
           "autoGrow": true,
           "rows": 8,
           "desc": "CK 列表 "
-        },
-        {
-          "id": "jddj_isNotify",
-          "name": "是否开启通知",
-          "val": true,
-          "type": "boolean",
-          "autoGrow": true,
-          "rows": 1,
-          "desc": "是否开启通知"
         }
       ],
       "icons": [
