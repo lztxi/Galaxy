@@ -1,5 +1,5 @@
 {
-    "name": "passerby-b",
+    "name": "passerby-b", 
     "description": "https://github.com/passerby-b/JDDJ",
     "task": [
         "*/30 * * * * * https://gitee.com/passerby-b/javascript/raw/master/dyjs.js, tag=抖音极速版刷音符, img-url=https://gitee.com/passerby-b/javascript/raw/master/icon/dy.png, enabled=true",
