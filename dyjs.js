@@ -16,7 +16,7 @@
 
 // =========================Loon=============================
 // [Script]
-// http-request luckycat/aweme/v1/task/done/read script-path=https://gitee.com/passerby-b/javascript/raw/master/dyjs.js, requires-body=true, timeout=10, tag=抖音极速 enable = true
+// http-request luckycat/aweme/v1/task/done/read script-path=https://gitee.com/passerby-b/javascript/raw/master/dyjs.js, requires-body=true, timeout=10, tag=抖音极速
 // cron "*/30 * * * * *" script-path=https://gitee.com/passerby-b/javascript/raw/master/dyjs.js,tag=抖音极速版刷音符
 
 var isShowCionDetail = false;//显示收益详情
