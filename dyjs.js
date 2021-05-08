@@ -3,6 +3,7 @@
 //获取多个header成功后再定时循环执行脚本任务,间隔时间最好在30s以上,每天稳定在10000音符左右
 //且刷且珍惜,刷的别太嚣张,说不定过几天就封了
 //如果需要在服务器上用nodejs运行则需要用boxjs把缓dyheadlist导出放到相同路径文件下下dyjs.json文件里
+//TG群:https://t.me/joinchat/wH4Ks3mT6mxiMDg1
 
 // [mitm]
 // hostname = *.snssdk.com,*.amemv.com
