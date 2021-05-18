@@ -47,9 +47,9 @@ const $ = new API("jddj_fruit");
     //     price = '近三十天最低价:' + min + ',最高价:' + max;
     // });
 
-    let resbody = $response.body;
-    console.log(JSON.parse(resbody).floors);
-    $.done({ body: resbody });
+    let resdata = JSON.parse($response.body);
+    console.log(resdata.floors[13].data.ad);
+    $.done({ body: JSON.stringify(resdata) });
 
 })().catch(async (e) => {
     console.log('', '❌失败! 原因:' + e + '!', '');
