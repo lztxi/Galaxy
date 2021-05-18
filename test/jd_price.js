@@ -2,60 +2,59 @@
 const $ = new API("jddj_fruit");
 !(async () => {
 
-    // let reqbody = 'area=17_1381_3079_50776&body=%7B%22source_type%22%3A%22search%22%2C%22skuId%22%3A%2210026665149685%22%2C%22darkModelEnum%22%3A3%2C%22gcLng%22%3A%22114.31944%22%2C%22ocrFlag%22%3Afalse%2C%22brand%22%3A%22iPhone%22%2C%22fullAddress%22%3A%22IPQa4MLDO91tqXQP4Vb25d2L3BXms0LbdlS0znnf2mAKL9tiNGpLZFfH9iIajignGhkW1Oy3KZJYVUtZ%2BO9B1iRQG9k62hXAVaqh9cGQU0Q%3D%22%2C%22isDesCbc%22%3Atrue%2C%22latitude%22%3A%2230.471916%22%2C%22plusClickCount%22%3A0%2C%22eventId%22%3A%22Searchlist_Productid%22%2C%22abTest800%22%3Atrue%2C%22gcLat%22%3A%2230.51296%22%2C%22avoidLive%22%3Afalse%2C%22uAddrId%22%3A%22397459499%22%2C%22longitude%22%3A%22114.319396%22%2C%22provinceId%22%3A%2217%22%2C%22personas%22%3A%22personas%22%2C%22cityId%22%3A%221381%22%2C%22townId%22%3A%2253770%22%2C%22plusLandedFatigue%22%3A0%2C%22districtId%22%3A%2250718%22%7D&build=167668&client=apple&clientVersion=9.5.4&d_brand=apple&d_model=iPhone11%2C6&eid=eidIced481213ds6JDJSO9UVRTeIiYarBrw9tyQyU7TJ7ASAv8IvIuGBRXJqZtQabKIIEWNsu6iVM%2BJfXJO%2BuFBPr5SZNYoL1uBcaTQQKJXBBOoI2TA4&isBackground=N&joycious=54&lang=zh_CN&networkType=wifi&networklibtype=JDNetworkBaseAF&openudid=311fc185ed97a0392e35657dfe2a321664170965&osVersion=14.1&partner=apple&rfs=0000&scope=10&screen=1242%2A2688&sign=d09476d00b52f4aab9638870019ffda5&st=1621304931737&sv=101&uemps=0-0&uts=0f31TVRjBSsqndu4/jgUPz6uymy50MQJc17HJwR/QxfZBXypHHkUHofYpPnkVnPSWhexFlhweNmTevr%2B8QeylBStFdHhycMIJyjAMvNu4tKBf5I/0jdz8a9ChoDEajx6b3H0b8Owoh8oKSUczhVCYK2tTaK9YKFHBDpaWaLdhTyKA4RI3fjtSzgDrmlh2Rph3c8jFYY5fpRjHC0z6SjLDw%3D%3D&uuid=hjudwgohxzVu96krv/T6Hg%3D%3D&wifiBssid=3d6e696f46a52bb20ed0de232f820824';
-    // //$request.body;
-    // console.log($request.body);
-    // let jsonparm = {};
-    // let params = decodeURIComponent(reqbody).split('&');
-    // params.forEach(item => {
-    //     if (item.indexOf('=') > -1) jsonparm[item.split('=')[0].trim()] = item.split('=')[1].trim();
-    // });
-    // let skuId = JSON.parse(jsonparm.body + '"}').skuId;
+    let reqbody = 'area=17_1381_3079_50776&body=%7B%22source_type%22%3A%22search%22%2C%22skuId%22%3A%2210026665149685%22%2C%22darkModelEnum%22%3A3%2C%22gcLng%22%3A%22114.31944%22%2C%22ocrFlag%22%3Afalse%2C%22brand%22%3A%22iPhone%22%2C%22fullAddress%22%3A%22IPQa4MLDO91tqXQP4Vb25d2L3BXms0LbdlS0znnf2mAKL9tiNGpLZFfH9iIajignGhkW1Oy3KZJYVUtZ%2BO9B1iRQG9k62hXAVaqh9cGQU0Q%3D%22%2C%22isDesCbc%22%3Atrue%2C%22latitude%22%3A%2230.471916%22%2C%22plusClickCount%22%3A0%2C%22eventId%22%3A%22Searchlist_Productid%22%2C%22abTest800%22%3Atrue%2C%22gcLat%22%3A%2230.51296%22%2C%22avoidLive%22%3Afalse%2C%22uAddrId%22%3A%22397459499%22%2C%22longitude%22%3A%22114.319396%22%2C%22provinceId%22%3A%2217%22%2C%22personas%22%3A%22personas%22%2C%22cityId%22%3A%221381%22%2C%22townId%22%3A%2253770%22%2C%22plusLandedFatigue%22%3A0%2C%22districtId%22%3A%2250718%22%7D&build=167668&client=apple&clientVersion=9.5.4&d_brand=apple&d_model=iPhone11%2C6&eid=eidIced481213ds6JDJSO9UVRTeIiYarBrw9tyQyU7TJ7ASAv8IvIuGBRXJqZtQabKIIEWNsu6iVM%2BJfXJO%2BuFBPr5SZNYoL1uBcaTQQKJXBBOoI2TA4&isBackground=N&joycious=54&lang=zh_CN&networkType=wifi&networklibtype=JDNetworkBaseAF&openudid=311fc185ed97a0392e35657dfe2a321664170965&osVersion=14.1&partner=apple&rfs=0000&scope=10&screen=1242%2A2688&sign=d09476d00b52f4aab9638870019ffda5&st=1621304931737&sv=101&uemps=0-0&uts=0f31TVRjBSsqndu4/jgUPz6uymy50MQJc17HJwR/QxfZBXypHHkUHofYpPnkVnPSWhexFlhweNmTevr%2B8QeylBStFdHhycMIJyjAMvNu4tKBf5I/0jdz8a9ChoDEajx6b3H0b8Owoh8oKSUczhVCYK2tTaK9YKFHBDpaWaLdhTyKA4RI3fjtSzgDrmlh2Rph3c8jFYY5fpRjHC0z6SjLDw%3D%3D&uuid=hjudwgohxzVu96krv/T6Hg%3D%3D&wifiBssid=3d6e696f46a52bb20ed0de232f820824';
+    //$request.body;
 
-    // let price = '';
-    // $.http.get({
-    //     url: 'http://p.zwjhl.com/price.aspx?url=https%3A%2F%2Fitem.jd.com%2F' + skuId + '.html&event=searchPrice',
-    //     headers: {
-    //         'Accept': 'text / html, application/ xhtml + xml, application/ xml; q = 0.9, image / avif, image / webp, image / apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    //         'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7',
-    //         'Cookie': 'ASP.NET_SessionId=nwq52zavmpj0ihtcxi42qprj; lsjgcx_userdev=%7b%22FirstDate%22%3a%222021-05-19,+09%3a19%3a29%22%2c%22FirstLoginDate%22%3a%22%22%2c%22LastLoginDate%22%3a%22%22%2c%22DevNum%22%3a%226d3b1021cf1f49cca4d569db94ff6378%22%7d',
-    //         'Host': 'p.zwjhl.com',
-    //         'Proxy-Connection': 'keep-alive',
-    //         'Referer': 'http://p.zwjhl.com/price.aspx?url=https%3A%2F%2Fitem.jd.com%2F' + skuId + '.html&event=searchPrice',
-    //         'Upgrade-Insecure-Requests': 1,
-    //         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36'
-    //     }
-    // }).then(response => {
-    //     //console.log(response.body);
-    //     let str = response.body;
-    //     let s = str.indexOf('flotChart.chartNow(\'') + 20;
-    //     let e = str.indexOf(',\'https://item.jd.com/') - 1;
-    //     let data = JSON.parse('[' + str.substring(s, e) + ']');
+    let jsonparm = {};
+    let params = decodeURIComponent(reqbody).split('&');
+    params.forEach(item => {
+        if (item.indexOf('=') > -1) jsonparm[item.split('=')[0].trim()] = item.split('=')[1].trim();
+    });
+    let skuId = JSON.parse(jsonparm.body + '"}').skuId;
 
-    //     let max = 0, min = 999999999;
-    //     for (let i = 0; i < data.length; i++) {
-    //         let date = new Date(parseInt(data[i][0])).toLocaleString().replace(/:\d{1,2}$/, ' ');
-    //         //console.log(date, data[i][1]);
-    //         if (max < data[i][1]) {
-    //             max = data[i][1];
-    //         }
-    //         if (min > data[i][1]) {
-    //             min = data[i][1];
-    //         }
-    //     }
-    //     console.log('近三十天最低价:' + min + ',最高价:' + max);
-    //     price = '近三十天最低价:' + min + ',最高价:' + max;
-    // });
+    let price = '';
+    await $.http.get({
+        url: 'http://p.zwjhl.com/price.aspx?url=https%3A%2F%2Fitem.jd.com%2F' + skuId + '.html&event=searchPrice',
+        headers: {
+            'Accept': 'text / html, application/ xhtml + xml, application/ xml; q = 0.9, image / avif, image / webp, image / apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7',
+            'Cookie': 'ASP.NET_SessionId=nwq52zavmpj0ihtcxi42qprj; lsjgcx_userdev=%7b%22FirstDate%22%3a%222021-05-19,+09%3a19%3a29%22%2c%22FirstLoginDate%22%3a%22%22%2c%22LastLoginDate%22%3a%22%22%2c%22DevNum%22%3a%226d3b1021cf1f49cca4d569db94ff6378%22%7d',
+            'Host': 'p.zwjhl.com',
+            'Proxy-Connection': 'keep-alive',
+            'Referer': 'http://p.zwjhl.com/price.aspx?url=https%3A%2F%2Fitem.jd.com%2F' + skuId + '.html&event=searchPrice',
+            'Upgrade-Insecure-Requests': 1,
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36'
+        }
+    }).then(response => {
+        //console.log(response.body);
+        let str = response.body;
+        let s = str.indexOf('flotChart.chartNow(\'') + 20;
+        let e = str.indexOf(',\'https://item.jd.com/') - 1;
+        let data = JSON.parse('[' + str.substring(s, e) + ']');
+
+        let max = 0, min = 999999999;
+        for (let i = 0; i < data.length; i++) {
+            let date = new Date(parseInt(data[i][0])).toLocaleString().replace(/:\d{1,2}$/, ' ');
+            //console.log(date, data[i][1]);
+            if (max < data[i][1]) {
+                max = data[i][1];
+            }
+            if (min > data[i][1]) {
+                min = data[i][1];
+            }
+        }
+        console.log('近三十天最低价:' + min + ',最高价:' + max);
+        price = '近三十天最低价:' + min + ',最高价:' + max;
+    });
 
     let resdata = JSON.parse($response.body);
     for (let i = 0; i < resdata.floors.length; i++) {
         let item = resdata.floors[i];
-        if (!!item.data.ad&&!!item.data.ad.adword) {
-            item.data.ad.adword='hello world';
+        if (!!item.data.ad && !!item.data.ad.adword) {
+            item.data.ad.adword = 'hello world';
         }
-        
+
     }
-    //console.log(JSON.stringify(resdata.floors));
     $.done({ body: JSON.stringify(resdata) });
 
 })().catch(async (e) => {
