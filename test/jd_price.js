@@ -48,7 +48,7 @@ const $ = new API("jddj_fruit");
     // });
 
     let resbody = $response.body;
-    JSON.parse(resbody);
+    console.log(JSON.parse(resbody).floors);
     $.done({ body: resbody });
 
 })().catch(async (e) => {
