@@ -48,7 +48,14 @@ const $ = new API("jddj_fruit");
     // });
 
     let resdata = JSON.parse($response.body);
-    console.log(JSON.stringify(resdata.floors));
+    for (let i = 0; i < resdata.floors.length; i++) {
+        let item = resdata.floors[i];
+        if (!!item.data.ad&&!!item.data.ad.adword) {
+            item.data.ad.adword='hello world';
+        }
+        
+    }
+    //console.log(JSON.stringify(resdata.floors));
     $.done({ body: JSON.stringify(resdata) });
 
 })().catch(async (e) => {
