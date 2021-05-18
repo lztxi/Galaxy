@@ -46,6 +46,7 @@ $.http.get({
     price = '近三十天最低价:' + min + ',最高价:' + max;
 });
 let resbody = $response.body;
+console.log(resbody);
 let resdata = JSON.parse(resbody);
 resdata.floors[13].data.ad.adword = price;
 $done({ body: JSON.stringify(resdata) });
