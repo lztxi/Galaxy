@@ -1,4 +1,4 @@
-name: age174-sync
+name: age174
 on:
   schedule:
     - cron: '14 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-age174--
+    types: sync-age174
 jobs:
   repo-sync:
     env:
@@ -18,7 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync age174--
+      - name: sync age174
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
