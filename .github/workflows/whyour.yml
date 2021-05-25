@@ -1,7 +1,7 @@
 name: whyour
 on:
   schedule:
-    - cron: '33 1 * * *'
+    - cron: '33 */6 * * *'
   workflow_dispatch:
   watch:
     types: started
