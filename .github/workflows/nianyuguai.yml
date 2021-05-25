@@ -1,7 +1,7 @@
 name: nianyuguai
 on:
   schedule:
-    - cron: '36 1 * * *'
+    - cron: '36 */6 * * *'
   workflow_dispatch:
   watch:
     types: started
