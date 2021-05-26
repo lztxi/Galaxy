@@ -9,6 +9,6 @@
         "10 0 * * * https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_plantBeans.js, tag=京东到家鲜豆庄园, img-url=https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png, enabled=true",
         "*/5 * * * * https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_fruit_collectWater.js, tag=京东到家果园收水, img-url=https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png, enabled=true",
         "*/5 * * * * https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_getPoints.js, tag=京东到家庄园收水, img-url=https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png, enabled=true",
-        "10 0,8,12,18 https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js, tag=滴滴果园, img-url=https://gitee.com/passerby-b/javascript/raw/master/icon/didi.png, enabled=true"
+        "10 0,8,12,18 * * * https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js, tag=滴滴果园, img-url=https://gitee.com/passerby-b/javascript/raw/master/icon/didi.png, enabled=true"
     ]
 }
