@@ -13,20 +13,23 @@ try{
   //var str= $prefs.valueForKey('中青看点阅读');
   let str=`<!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <title>默认点标记</title>
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
     <style>
-        html, body, #container {
+        html,
+        body,
+        #container {
             height: 100%;
             width: 100%;
         }
 
         .amap-icon img,
-        .amap-marker-content img{
+        .amap-marker-content img {
             width: 25px;
             height: 34px;
         }
@@ -45,62 +48,60 @@ try{
             border-radius: 3px;
         }
 
-        .input-card{
+        .input-card {
             width: 18rem;
             z-index: 170;
         }
 
-        .input-card .btn{
-            margin-right: .8rem;
-        }
+            .input-card .btn {
+                margin-right: .8rem;
+            }
 
-        .input-card .btn:last-child{
-            margin-right: 0;
-        }
+                .input-card .btn:last-child {
+                    margin-right: 0;
+                }
     </style>
 </head>
-<body>
-<div id="container"></div>
-<div class="input-card">
-    <label style="color:grey">点标记操作</label>
-    <div class="input-item">
-        <input id="addMarker" type="button" class="btn" onclick="addMarker()" value="添加点标记">
-        <input id="updateMarker" type="button" class="btn" onclick="updateIcon()" value="更新点标记图标">
-    </div>
-    <div class="input-item">
-        <input id="clearMarker" type="button" class="btn" onclick="clearMarker()" value="删除点标记">
-        <input id="updateMarker" type="button" class="btn" onclick="updateContent()" value="更新点标记内容">
-    </div>
-</div>
-<script type="text/javascript"
-        src="https://webapi.amap.com/maps?v=1.4.15&key=334650026fcf5b7ceb675e4c2f7eb7d1"></script>
-<script type="text/javascript">
-    var marker, map = new AMap.Map("container", {
-        resizeEnable: true,
-        center: [114.320079,30.472023],
-        zoom: 13
-    });
 
-   
+<body>
+    <div id="container"></div>
+
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=334650026fcf5b7ceb675e4c2f7eb7d1"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var lng = getUrlParam("lng"), lat = getUrlParam("lat");
+        var marker, map = new AMap.Map("container", {
+            resizeEnable: true,
+            center: [lng, lat],
+            zoom: 16
+        });
+
+
         marker = new AMap.Marker({
-            icon: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
-            position: [114.320079,30.472023],
+            icon: "https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
+            position: [lng, lat],
             offset: new AMap.Pixel(-13, -30)
         });
         marker.setMap(map);
-    
-    
 
-    // 清除 marker
-    function clearMarker() {
 
-        if (marker) {
-            marker.setMap(null);
-            marker = null;
+        // 清除 marker
+        function clearMarker() {
+
+            if (marker) {
+                marker.setMap(null);
+                marker = null;
+            }
         }
-    }
-</script>
+
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+    </script>
 </body>
+
 </html>`
   $done(str);
 }
