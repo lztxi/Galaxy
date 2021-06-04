@@ -66,7 +66,7 @@ try{
 <body>
     <div id="container"></div>
 
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=334650026fcf5b7ceb675e4c2f7eb7d1"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key="></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         var lng = getUrlParam("lng"), lat = getUrlParam("lat");
