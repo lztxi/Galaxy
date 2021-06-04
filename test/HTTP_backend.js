@@ -77,7 +77,7 @@ try{
 <script type="text/javascript">
     var marker, map = new AMap.Map("container", {
         resizeEnable: true,
-        center: [114.326476,30.503317],
+        center: [114.320079,30.472023],
         zoom: 13
     });
 
