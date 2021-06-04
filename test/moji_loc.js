@@ -12,7 +12,7 @@ const $ = new API("moji_loc");
         addres = data2.regeocode.formatted_address;
     })
 
-    $.notify('' + data.params.city[0].lon + '', '' + data.params.city[0].lat + '', addres);
+    $.notify('' + data.params.city[0].lon + '', '' + data.params.city[0].lat + '', addres, { 'open-url': '10.8.3.7:9999/test?lng=' + data.params.city[0].lon + '&lat=' + data.params.city[0].lat });
 
 })().catch(async (e) => {
     console.log('', '❌失败! 原因:' + e + '!', '');
