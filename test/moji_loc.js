@@ -4,7 +4,8 @@ const $ = new API("moji_loc");
     let body = $request.body;
     console.log(body);
     let data = JSON.parse(body);
-    $.notify(data.params.city[0].lon, data.params.city[0].lat, '');
+    //$.notify(data.params.city[0].lon, data.params.city[0].lat, '');
+    $.notify('11', '22', '');
 
 })().catch(async (e) => {
     console.log('', '❌失败! 原因:' + e + '!', '');
