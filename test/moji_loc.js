@@ -3,16 +3,23 @@ const $ = new API("moji_loc");
 !(async () => {
     let body = $request.body;
     let data = JSON.parse(body);
+    let lng = data.params.city[0].lon, lat = data.params.city[0].lat, addres = '';
 
-    let addres = '';
-    await $.http.get({ url: 'https://restapi.amap.com/v3/geocode/regeo?output=json&location=' + data.params.city[0].lon + ',' + data.params.city[0].lat + '&key=334650026fcf5b7ceb675e4c2f7eb7d1&radius=10&extensions=all' }).then(response => {
+    await $.http.get({ url: 'https://restapi.amap.com/v3/assistant/coordinate/convert?locations=' + lng + ',' + lat + '&coordsys=gps&key=334650026fcf5b7ceb675e4c2f7eb7d1' }).then(response => {
+        //console.log(response.body);
+        let data2 = JSON.parse(response.body);
+        lng = data2.locations.split(',')[0];
+        lat = data2.locations.split(',')[1];
+    })
+
+    await $.http.get({ url: 'https://restapi.amap.com/v3/geocode/regeo?output=json&location=' + lng + ',' + lat + '&key=334650026fcf5b7ceb675e4c2f7eb7d1&radius=10&extensions=all' }).then(response => {
         //console.log(response.body);
         let data2 = JSON.parse(response.body);
         console.log(data2.regeocode.formatted_address);
         addres = data2.regeocode.formatted_address;
     })
 
-    $.notify('' + data.params.city[0].lon + '', '' + data.params.city[0].lat + '', addres, { 'open-url': 'http://10.8.3.7:9999/test?loc=' + data.params.city[0].lon + ',' + data.params.city[0].lat });
+    $.notify('' + lng + '', '' + lat + '', addres, { 'open-url': 'http://10.8.3.7:9999/test?loc=' + lng + ',' + lat });
 
 })().catch(async (e) => {
     console.log('', '❌失败! 原因:' + e + '!', '');
