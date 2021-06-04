@@ -1,8 +1,8 @@
 
 const $ = new API("moji_loc");
 !(async () => {
-    //let body = $request.body;
-    let body='{"common":{"security_request":"0","pid":"9000","snsid":91752545,"sid":"AES574C3732553170675673576F4E4871466F70384971513D3D","os_version":"14.1","device":"iPhone11,6","package_name":"com.moji.MojiWeather","identifier":"00000000-0000-0000-0000-000000000000","uid":558152003475603456,"versionType":"1","app_internal_version":"5009000006","token":"bb6f117912bee8407d37c217877270c7d4ab93395ae04b74bab8d7e2bdb86ad9","locationcity":"0","giuid":"35c36560f1f04d0a042b1ce06432e17f","height":2688,"idfa_open":"0","mcc":"460","unix":"1622787696020.359","net":"wifi","app_version":"5009000006","language":"CN","current_city":"5465","idfv":"E1D06484-891A-4D68-8233-D5CE1A92A72D","uaid":"558152003693707264","mnc":"02","width":1242,"vip":"0","platform":"iPhone"},"params":{"src":"106","city":[{"lon":114.31413655520602,"voice":{"wu":"beau","lang":"CN","tu":"c"},"id":-99,"lat":30.474377360491502,"avatarId":"8","type":1}]}}';
+    let body = $request.body;
+    //let body='{"common":{"security_request":"0","pid":"9000","snsid":91752545,"sid":"AES574C3732553170675673576F4E4871466F70384971513D3D","os_version":"14.1","device":"iPhone11,6","package_name":"com.moji.MojiWeather","identifier":"00000000-0000-0000-0000-000000000000","uid":558152003475603456,"versionType":"1","app_internal_version":"5009000006","token":"bb6f117912bee8407d37c217877270c7d4ab93395ae04b74bab8d7e2bdb86ad9","locationcity":"0","giuid":"35c36560f1f04d0a042b1ce06432e17f","height":2688,"idfa_open":"0","mcc":"460","unix":"1622787696020.359","net":"wifi","app_version":"5009000006","language":"CN","current_city":"5465","idfv":"E1D06484-891A-4D68-8233-D5CE1A92A72D","uaid":"558152003693707264","mnc":"02","width":1242,"vip":"0","platform":"iPhone"},"params":{"src":"106","city":[{"lon":114.31413655520602,"voice":{"wu":"beau","lang":"CN","tu":"c"},"id":-99,"lat":30.474377360491502,"avatarId":"8","type":1}]}}';
     console.log(body);
     let data = JSON.parse(body);
 
