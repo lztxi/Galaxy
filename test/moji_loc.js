@@ -2,6 +2,7 @@
 const $ = new API("moji_loc");
 !(async () => {
     let body = $request.body;
+    console.log(body);
     let data = JSON.parse(body);
     $.notify(data.params.city[0].lon, data.params.city[0].lat, '');
 
