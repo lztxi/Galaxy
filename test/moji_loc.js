@@ -4,7 +4,16 @@ const $ = new API("moji_loc");
     let body = $request.body;
     console.log(body);
     let data = JSON.parse(body);
-    $.notify('' + data.params.city[0].lon + '', '' + data.params.city[0].lat + '', '');
+
+    let addres = '';
+    await $.http.get({ url: 'https://restapi.amap.com/v3/geocode/regeo?output=json&location=' + data.params.city[0].lon + ', ' + data.params.city[0].lat + '&key=334650026fcf5b7ceb675e4c2f7eb7d1&radius=10&extensions=all' }).then(response => {
+        //console.log(response.body);
+        let data2 = JSON.parse(response.body);
+        console.log(data2.regeocode.formatted_address);
+        addres = data2.regeocode.formatted_address;
+    })
+
+    $.notify('' + data.params.city[0].lon + '', '' + data.params.city[0].lat + '', addres);
 
 })().catch(async (e) => {
     console.log('', '❌失败! 原因:' + e + '!', '');
