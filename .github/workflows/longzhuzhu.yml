@@ -1,0 +1,28 @@
+name: longzhuzhu
+on:
+  schedule:
+    - cron: '52 */6 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: sync-longzhuzhu
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ secrets.PAT }} 
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: sync longzhuzhu
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/longzhuzhu/nianyu.git"
+          source_branch: "main"
+          destination_branch: "longzhuzhu_nianyu"
+          github_token: ${{ secrets.PAT }}
