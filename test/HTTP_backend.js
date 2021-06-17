@@ -3,13 +3,10 @@ var $tool = new tool();
 
 try{
   //var str= $prefs.valueForKey('dyheadlist');
-  //var str= $prefs.valueForKey('dyjs');
+  var str= $prefs.valueForKey('dyjs');
   //var str= $prefs.valueForKey('ksjs');
   //var str= $prefs.valueForKey('zqgetbody_body');
   //var str= $prefs.valueForKey('中青看点阅读');
-
-  var key = getUrlParam("key");
-  var str= $prefs.valueForKey(key);
   
   $done(str);
 }
