@@ -17,12 +17,11 @@
             console.log(obj.roomInfo.tLiveInfo.tLiveStreamInfo.sDefaultLiveStreamUrl)
             $.notify("虎牙", "绵绵半声", "", { url: obj.roomInfo.tLiveInfo.tLiveStreamInfo.sDefaultLiveStreamUrl });
         });
-
+        $.done();
     } catch (error) {
         console.log(error);
-    } finally {
         $.done();
-    }
+    } 
 
 })();
 
