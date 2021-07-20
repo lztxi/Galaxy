@@ -15,8 +15,9 @@ const $ = new API();
             let e = data.indexOf('} </script>');
             let jsonstr = data.substring(s + 25, e + 1);
             let obj = JSON.parse(jsonstr);
-            console.log(obj.roomInfo.tLiveInfo.tLiveStreamInfo.sDefaultLiveStreamUrl)
-            $.notify("虎牙", "绵绵半声", "", { url: obj.roomInfo.tLiveInfo.tLiveStreamInfo.sDefaultLiveStreamUrl });
+            let url=obj.roomInfo.tLiveInfo.tLiveStreamInfo.sDefaultLiveStreamUrl.replace('\r','').replace('\n','').replace(/ /g,'');
+            console.log(url)
+            $.notify("虎牙", "绵绵半声", "", { url: url });
         });
         $.done();
     } catch (error) {
