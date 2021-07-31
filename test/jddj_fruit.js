@@ -612,8 +612,8 @@ async function taskLoginUrl(deviceid, thiscookie) {
                         shareCode = setcookie[3].split(';')[0].split('=')[1];
                     }
                     else {
-                        let aaa = JSON.parse(response.headers);
-                        let setcookie= aaa['set-cookie'];
+                        let aaa = JSON.parse(response);
+                        let setcookie= aaa.headers['set-cookie'];
                         ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
                         shareCode = setcookie[3].split(';')[0].split('=')[1];
                     }
