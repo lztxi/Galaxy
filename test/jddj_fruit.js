@@ -606,12 +606,16 @@ async function taskLoginUrl(deviceid, thiscookie) {
                 
                 if (response.body.indexOf('请求成功') > -1) {
 
-                    console.log('okkkkkkkkkkkk');
-                    let setcookie = response.headers['set-cookie'];
-                    ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
-                    shareCode = setcookie[3].split(';')[0].split('=')[1];
-
-                    console.log(setcookie);
+                    if ($.isNode) {
+                        let setcookie = response.headers['set-cookie'];
+                        ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
+                        shareCode = setcookie[3].split(';')[0].split('=')[1];
+                    }
+                    else {
+                        let setcookie = JSON.parse(response.headers)['set-cookie'];
+                        ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
+                        shareCode = setcookie[3].split(';')[0].split('=')[1];
+                    }
                 }
                  
                 
