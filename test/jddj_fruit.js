@@ -50,10 +50,12 @@ let cookies = [], notify = ''; waterNum = 0, waterTimes = 0, shareCode = '', hzs
 
         console.log('\r\n★★★★★开始执行第' + (i + 1) + '个账号,共' + cookies.length + '个账号★★★★★');
         thiscookie = cookies[i];
-        if (!thiscookie) continue;
+        //if (!thiscookie) continue;
         waterNum = 0, waterTimes = 0;
 
+        console.log(thiscookie);
         deviceid = _uuid();
+        console.log(deviceid);
         thiscookie = await taskLoginUrl(deviceid, thiscookie);
 
         await userinfo();
