@@ -57,7 +57,8 @@ let cookies = [], notify = ''; waterNum = 0, waterTimes = 0, shareCode = '', hzs
         console.log(thiscookie);
         deviceid = _uuid();
         console.log(deviceid);
-        thiscookie = await taskLoginUrl(deviceid, thiscookie);
+        let djck = await taskLoginUrl(deviceid, thiscookie);
+        thiscookie=djck;
         console.log(thiscookie);
 
         await userinfo();
