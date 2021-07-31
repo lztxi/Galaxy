@@ -53,6 +53,7 @@ let cookies = [], notify = ''; waterNum = 0, waterTimes = 0, shareCode = '', hzs
         //if (!thiscookie) continue;
         waterNum = 0, waterTimes = 0;
 
+        thiscookie = thiscookie.replace(/ /g, '').replace(/\n/g, '');
         console.log(thiscookie);
         deviceid = _uuid();
         console.log(deviceid);
