@@ -50,7 +50,7 @@ let cookies = [], notify = ''; waterNum = 0, waterTimes = 0, shareCode = '', hzs
 
         console.log('\r\n★★★★★开始执行第' + (i + 1) + '个账号,共' + cookies.length + '个账号★★★★★');
         thiscookie = cookies[i];
-        //if (!thiscookie) continue;
+        if (!thiscookie) continue;
         waterNum = 0, waterTimes = 0;
 
         deviceid = _uuid();
@@ -590,6 +590,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
                 }
             };
             $.http.get(option).then(response => {
+                console.log(response.body);
                 let ckstr = '';
                 if (response.body.indexOf('请求成功') > -1) {
                     let setcookie = response.headers['set-cookie'];
