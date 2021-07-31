@@ -50,16 +50,13 @@ let cookies = [], notify = ''; waterNum = 0, waterTimes = 0, shareCode = '', hzs
 
         console.log('\r\n★★★★★开始执行第' + (i + 1) + '个账号,共' + cookies.length + '个账号★★★★★');
         thiscookie = cookies[i];
-        //if (!thiscookie) continue;
+        if (!thiscookie) continue;
         waterNum = 0, waterTimes = 0;
 
         thiscookie = thiscookie.replace(/ /g, '').replace(/\n/g, '');
-        console.log(thiscookie);
+
         deviceid = _uuid();
-        console.log(deviceid);
-        let djck = await taskLoginUrl(deviceid, thiscookie);
-        thiscookie=djck;
-        console.log(thiscookie);
+        thiscookie = await taskLoginUrl(deviceid, thiscookie);
 
         await userinfo();
         await $.wait(1000);
@@ -521,7 +518,7 @@ async function treeInfo(step) {
                 if (data.code == 0) {
                     if (step == 0) {
                         waterNum = data.result.userResponse.waterBalance;
-                        shareCode += data.result.activityInfoResponse.userPin;
+                        //shareCode += data.result.activityInfoResponse.userPin;
                     }
                     if (step == 2) {
                         waterNum = (waterTimes * 10) + data.result.userResponse.waterBalance - waterNum;//浇水次数*10+剩余水滴-初始水滴
@@ -583,9 +580,6 @@ function urlTask(url, body) {
 
 //根据京东ck获取到家ck
 async function taskLoginUrl(deviceid, thiscookie) {
-    console.log(111111111);
-    console.log(thiscookie);
-    console.log(2222222222);
     return new Promise(async resolve => {
         try {
             let option = {
@@ -597,17 +591,14 @@ async function taskLoginUrl(deviceid, thiscookie) {
                     "User-Agent": 'jdapp;iPhone;10.0.10;14.1;311fc185ed97a0392e35657dfe2a321664170965;network/wifi;model/iPhone11,6;appBuild/167764;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1'
                 }
             };
-            //console.log(JSON.stringify(option));
             let ckstr = '';
-            await  $.http.get(option).then(async response => {
-
+            await $.http.get(option).then(async response => {
                 if (response.body.indexOf('请求成功') > -1) {
                     if ($.env.isNode) {
-                        
+
                         let setcookie = response.headers['set-cookie'];
                         ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
                         shareCode = setcookie[3].split(';')[0].split('=')[1];
-                        console.log(ckstr);
                     }
                     else {
                         let Set_Cookie = response.headers['Set-Cookie'];
@@ -616,24 +607,18 @@ async function taskLoginUrl(deviceid, thiscookie) {
                             if (o.indexOf('o2o') > -1 || o.indexOf('H5_PIN') > -1) {
                                 ckstr += o + ';';
                             }
-                            if (o.indexOf('o2o') > -1 || o.indexOf('H5_PIN') > -1) {
+                            if (o.indexOf('H5_PIN') > -1) {
                                 shareCode = o.split('=')[1];
                             }
                         }
                         ckstr += ';deviceid_pdj_jd=' + deviceid;
-
-
                     }
                 }
-                 
-                
             })
-            console.log(ckstr);
             resolve(ckstr);
 
         } catch (error) {
-            console.log(JSON.stringify(error));
-            resolve('xxxxx');
+            resolve('');
         }
     })
 
