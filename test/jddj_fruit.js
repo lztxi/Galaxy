@@ -598,7 +598,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
                 }
             };
             //console.log(JSON.stringify(option));
-            $.http.get(option).then(async response => {
+            await  $.http.get(option).then(async response => {
                 console.log(3333333333);
                 console.log(JSON.stringify(response));
                 console.log(44444444);
