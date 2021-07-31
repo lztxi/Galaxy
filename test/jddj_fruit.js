@@ -589,7 +589,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
                     "User-Agent": 'jdapp;iPhone;10.0.10;14.1;311fc185ed97a0392e35657dfe2a321664170965;network/wifi;model/iPhone11,6;appBuild/167764;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1'
                 }
             };
-            $.http.get(option).then(response => {
+            $.http.get(option).then(async response => {
                 console.log(response.body);
                 let ckstr = '';
                 if (response.body.indexOf('请求成功') > -1) {
