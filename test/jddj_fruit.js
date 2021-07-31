@@ -583,6 +583,7 @@ function urlTask(url, body) {
 
 //根据京东ck获取到家ck
 async function taskLoginUrl(deviceid, thiscookie) {
+    console.log(2222222222);
     console.log(deviceid, 'ck:'+thiscookie);
     return new Promise(async resolve => {
         try {
