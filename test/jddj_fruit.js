@@ -599,7 +599,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
             };
             console.log(option);
             $.http.get(option).then(async response => {
-                console.log(response.body);
+                console.log(response);
                 let ckstr = '';
                 if (response.body.indexOf('请求成功') > -1) {
                     let setcookie = response.headers['set-cookie'];
