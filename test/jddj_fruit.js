@@ -613,7 +613,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
             })
 
         } catch (error) {
-            console.log(error);
+            console.log(JSON.stringify(error));
             resolve('xxxxx');
         }
     })
