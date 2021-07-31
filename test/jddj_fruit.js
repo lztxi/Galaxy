@@ -610,6 +610,8 @@ async function taskLoginUrl(deviceid, thiscookie) {
                     let setcookie = response.headers['set-cookie'];
                     ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
                     shareCode = setcookie[3].split(';')[0].split('=')[1];
+
+                    console.log(setcookie);
                 }
                  
                 
