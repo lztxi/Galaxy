@@ -602,18 +602,27 @@ async function taskLoginUrl(deviceid, thiscookie) {
             await  $.http.get(option).then(async response => {
 
                 if (response.body.indexOf('请求成功') > -1) {
-                    console.log(JSON.stringify(response.headers));  
-                     console.log(response.headers['Set-Cookie']);        
-                    if ($.isNode) {
+                    if ($.env.isNode) {
+                        
                         let setcookie = response.headers['set-cookie'];
                         ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
                         shareCode = setcookie[3].split(';')[0].split('=')[1];
+                        console.log(ckstr);
                     }
                     else {
-                        let aaa = JSON.parse(response);
-                        let setcookie= aaa.headers['set-cookie'];
-                        ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
-                        shareCode = setcookie[3].split(';')[0].split('=')[1];
+                        let Set_Cookie = response.headers['Set-Cookie'];
+                        let arrt = Set_Cookie.split(';');
+                        for (const o of arrt) {
+                            if (o.indexOf('o2o') > -1 || o.indexOf('H5_PIN') > -1) {
+                                ckstr += o + ';';
+                            }
+                            if (o.indexOf('o2o') > -1 || o.indexOf('H5_PIN') > -1) {
+                                shareCode = o.split('=')[1];
+                            }
+                        }
+                        ckstr += ';deviceid_pdj_jd=' + deviceid;
+
+
                     }
                 }
                  
