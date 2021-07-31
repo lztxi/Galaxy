@@ -608,6 +608,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
                                 ckstr += o + ';';
                             }
                             if (o.indexOf('H5_PIN') > -1) {
+                                console.log(o);
                                 shareCode = o.split('=')[1];
                             }
                         }
