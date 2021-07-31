@@ -605,6 +605,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
                     ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
                     shareCode = setcookie[3].split(';')[0].split('=')[1];
                 }
+                 console.log(ckstr);
                 resolve(ckstr);
             })
 
