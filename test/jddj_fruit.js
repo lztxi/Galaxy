@@ -518,7 +518,7 @@ async function treeInfo(step) {
                 if (data.code == 0) {
                     if (step == 0) {
                         waterNum = data.result.userResponse.waterBalance;
-                        //shareCode += data.result.activityInfoResponse.userPin;
+                        shareCode += data.result.activityInfoResponse.userPin;
                     }
                     if (step == 2) {
                         waterNum = (waterTimes * 10) + data.result.userResponse.waterBalance - waterNum;//浇水次数*10+剩余水滴-初始水滴
@@ -606,10 +606,6 @@ async function taskLoginUrl(deviceid, thiscookie) {
                         for (const o of arrt) {
                             if (o.indexOf('o2o') > -1 || o.indexOf('H5_PIN') > -1) {
                                 ckstr += o + ';';
-                            }
-                            if (o.indexOf('H5_PIN') > -1) {
-                                console.log(o);
-                                shareCode = o.split('=')[1];
                             }
                         }
                         ckstr += ';deviceid_pdj_jd=' + deviceid;
