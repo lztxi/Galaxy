@@ -598,19 +598,22 @@ async function taskLoginUrl(deviceid, thiscookie) {
                 }
             };
             //console.log(JSON.stringify(option));
+            let ckstr = '';
             await  $.http.get(option).then(async response => {
                 console.log(3333333333);
                 console.log(JSON.stringify(response));
                 console.log(44444444);
-                let ckstr = '';
+                
                 if (response.body.indexOf('请求成功') > -1) {
                     let setcookie = response.headers['set-cookie'];
                     ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
                     shareCode = setcookie[3].split(';')[0].split('=')[1];
                 }
-                 console.log(ckstr);
-                resolve(ckstr);
+                 
+                
             })
+            console.log(ckstr);
+            resolve(ckstr);
 
         } catch (error) {
             console.log(JSON.stringify(error));
