@@ -605,7 +605,7 @@ async function taskLoginUrl(deviceid, thiscookie) {
                 console.log(44444444);
                 
                 if (response.body.indexOf('请求成功') > -1) {
-
+                    console.log(response.headers['set-cookie']);          
                     if ($.isNode) {
                         let setcookie = response.headers['set-cookie'];
                         ckstr = setcookie[0].split(';')[0] + ';' + setcookie[3].split(';')[0] + ';deviceid_pdj_jd=' + deviceid;
