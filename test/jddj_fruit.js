@@ -583,7 +583,7 @@ function urlTask(url, body) {
 
 //根据京东ck获取到家ck
 async function taskLoginUrl(deviceid, thiscookie) {
-    console.log(deviceid, thiscookie);
+    console.log(deviceid, 'ck:'+thiscookie);
     return new Promise(async resolve => {
         try {
             let option = {
@@ -618,7 +618,6 @@ function _uuid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     }
-    console.log(s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4());
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
 
