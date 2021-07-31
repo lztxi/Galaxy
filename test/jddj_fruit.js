@@ -582,6 +582,7 @@ function urlTask(url, body) {
 
 //根据京东ck获取到家ck
 async function taskLoginUrl(deviceid, thiscookie) {
+    console.log(deviceid, thiscookie);
     return new Promise(async resolve => {
         try {
             let option = {
