@@ -17,7 +17,7 @@ const $ = new API();
             let obj = JSON.parse(jsonstr);
             let url = obj.roomInfo.tLiveInfo.tLiveStreamInfo.sDefaultLiveStreamUrl.replace(/\r/g, '').replace(/\n/g, '').replace(/ /g, '');
             console.log(url)
-            $.notify("虎牙", "绵绵半声", "", { url: url });
+            $.notify("虎牙", "绵绵半声", "", { "open-url": url, "update-pasteboard":url });
         });
         $.done();
     } catch (error) {
